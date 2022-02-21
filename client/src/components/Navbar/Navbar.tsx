@@ -8,7 +8,7 @@ import "./Navbar.scss";
 const Navbar: React.FC = () => {
   const navigationitems: string[] = ["home", "about", "contact", "work", "skills"];
 
-  const [toggle, setToggle] = useState<boolean>(true);
+  const [toggle, setToggle] = useState<boolean>(false);
 
   return (
     <nav className="app__navbar">
