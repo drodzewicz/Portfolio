@@ -7,9 +7,9 @@ function App() {
   return <div className="app">
     <Navbar />
     <Header />
-    <Work />
-    <Skills />
     <About />
+    <Skills />
+    <Work />
     <Footer />
   </div>;
 }
