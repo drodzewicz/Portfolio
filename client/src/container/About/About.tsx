@@ -1,24 +1,37 @@
 import React, { useEffect, useState } from "react";
 import "./About.scss";
 import { motion } from "framer-motion";
-import { images } from "constants/index";
+import { urlFor, client } from "client";
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+
 interface AboutI {
   title: string;
   description: string;
-  imageUrl: string;
+  imgUrl: SanityImageSource;
 }
 
 const About = () => {
-  const abouts: AboutI[] = [
-    { title: "Web Development", description: "I am a good developer", imageUrl: images.about01 },
-    { title: "Web Design", description: "I am a good developer", imageUrl: images.about02 },
-    { title: "UI/UX", description: "I am a good developer", imageUrl: images.about03 },
-  ];
+  const [abouts, setAbouts] = useState<AboutI[]>([]);
+
+  useEffect(() => {
+    const query = '*[_type == "abouts" ]';
+    client.fetch(query).then((data) => {
+      setAbouts(data);
+      data.forEach((el: AboutI) => {
+        console.log(urlFor(el.imgUrl));
+      });
+    });
+
+
+    return () => {};
+  }, []);
 
   return (
     <>
       <h2 className="head-text">
-        I know that <span>Good Development</span><br />means <span>Good Buisness</span>
+        I know that <span>Good Development</span>
+        <br />
+        means <span>Good Buisness</span>
       </h2>
       <div className="app__profile">
         {abouts.map((about) => (
@@ -27,8 +40,9 @@ const About = () => {
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.5, type: "tween" }}
             className="app__profile-item"
-            key={`${about.title}`}>
-            <img src={about.imageUrl} alt={about.title} />
+            key={`${about.title}`}
+          >
+            <img src={urlFor(about.imgUrl).url()} alt={about.title} />
             <h2 className="bold-text" style={{ marginTop: 20 }}>
               {about.title}
             </h2>
