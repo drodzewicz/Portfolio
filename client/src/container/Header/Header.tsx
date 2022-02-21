@@ -15,6 +15,8 @@ const Header = () => {
     },
   };
 
+  const circleImages: string[] = [images.figma, images.react, images.vue]
+
   return (
     <div id="home" className="app__header app__flex">
       <motion.div
@@ -52,7 +54,7 @@ const Header = () => {
         variants={scaleVariants}
         whileInView={scaleVariants.whileInView as TargetAndTransition}
         className="app__header-circles">
-        {[images.react, images.vue, images.sass].map((circle, index) => (
+        {circleImages.map(circle => (
           <div className="circle-cmp app__flex" key={`circle-${circle}`}>
             <img src={circle} alt="circle" />
           </div>
