@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
         {navigationitems.map((navItem) => (
           <li className="app__flex p-text" key={`link-${navItem}`}>
             <div />
-            <a href={`#/${navItem}`}>{navItem}</a>
+            <a href={`#${navItem}`}>{navItem}</a>
           </li>
         ))}
       </ul>
@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
             <ul>
               {navigationitems.map((navItem) => (
                 <li key={navItem}>
-                  <a onClick={() => setToggle(false)} href={`#/${navItem}`}>
+                  <a onClick={() => setToggle(false)} href={`#${navItem}`}>
                     {navItem}
                   </a>
                 </li>

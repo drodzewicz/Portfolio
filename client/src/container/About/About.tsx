@@ -3,6 +3,7 @@ import "./About.scss";
 import { motion } from "framer-motion";
 import { urlFor, client } from "client";
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import AppWrap from "wrapper/AppWrap";
 
 interface AboutI {
   title: string;
@@ -56,4 +57,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AppWrap(About, "about");

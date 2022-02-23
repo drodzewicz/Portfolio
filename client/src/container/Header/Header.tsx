@@ -2,6 +2,7 @@ import React from "react";
 import "./Header.scss";
 import { motion, TargetAndTransition, Variants } from "framer-motion";
 import { images } from "constants/index";
+import AppWrap from "wrapper/AppWrap";
 
 const Header = () => {
   const scaleVariants: Variants = {
@@ -18,7 +19,7 @@ const Header = () => {
   const circleImages: string[] = [images.figma, images.react, images.vue]
 
   return (
-    <div id="home" className="app__header app__flex">
+    <div className="app__header app__flex">
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
         transition={{ duration: 0.5 }}
@@ -64,4 +65,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default AppWrap(Header, "home");
