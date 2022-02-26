@@ -5,6 +5,7 @@ import ReactTooltip from "react-tooltip";
 import { urlFor, client } from "../../client";
 import "./Skills.scss";
 import AppWrap from "wrapper/AppWrap";
+import MotionWrap from "wrapper/MotionWrap";
 interface SkillI {
   name: string;
   bgColor: string;
@@ -96,4 +97,4 @@ const Skills = () => {
 };
 
 
-export default AppWrap(Skills, "skills");
+export default AppWrap(MotionWrap(Skills, "app__skills"), "skills", "app__whitebg");

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import "./Work.scss";
 import { client, urlFor } from "client";
 import AppWrap from "wrapper/AppWrap";
+import MotionWrap from "wrapper/MotionWrap";
 interface WorkI {
   title: string;
   description: string;
@@ -113,4 +114,4 @@ const Work = () => {
   );
 };
 
-export default AppWrap(Work, "work", "app__primarybg");
+export default AppWrap(MotionWrap(Work, "app__works"), "work", "app__primarybg");

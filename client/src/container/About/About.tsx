@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./About.scss";
 import { motion } from "framer-motion";
 import { urlFor, client } from "client";
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import AppWrap from "wrapper/AppWrap";
+import MotionWrap from "wrapper/MotionWrap";
 
 interface AboutI {
   title: string;
@@ -23,7 +24,6 @@ const About = () => {
       });
     });
 
-
     return () => {};
   }, []);
 
@@ -41,8 +41,7 @@ const About = () => {
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.5, type: "tween" }}
             className="app__profile-item"
-            key={`${about.title}`}
-          >
+            key={`${about.title}`}>
             <img src={urlFor(about.imgUrl).url()} alt={about.title} />
             <h2 className="bold-text" style={{ marginTop: 20 }}>
               {about.title}
@@ -57,4 +56,4 @@ const About = () => {
   );
 };
 
-export default AppWrap(About, "about");
+export default AppWrap(MotionWrap(About, "app__about"), "about", "app__whitebg");
