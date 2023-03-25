@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { AiFillEye, AiFillGithub } from "react-icons/ai";
-import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { client, urlFor } from "client";
 import AppWrap from "wrapper/AppWrap";
@@ -9,49 +8,36 @@ import PageWrap from "wrapper/PageWrap";
 import { section } from "constants/sections";
 import ProjectCard from "components/ProjectCard";
 import ProjectCardModal from "components/ProjectCardModal";
-import { IProjectCardProps } from "components/ProjectCard/types";
+import { ProjectType } from "types";
 import "./Work.scss";
 
 const Work = () => {
-  const [works, setWorks] = useState<IProjectCardProps[]>([]);
-  const [filterWork, setFilterWork] = useState<IProjectCardProps[]>([]);
-  const [selectedItem, setSelectedItem] = useState<any>(null);
+  const [projects, setProjects] = useState<ProjectType[]>([]);
+  const [selectedItem, setSelectedItem] = useState<ProjectType | null>(null);
+
+  const transformData = (data: ProjectType[]): ProjectType[] => {
+    return data.map((project: ProjectType) => {
+      project.images = project.images.map((image: any) => ({
+        _id: image?._key,
+        src: urlFor(image).url(),
+      }));
+      return project;
+    });
+  };
 
   useEffect(() => {
-    const query = '*[_type == "works"]';
+    const query = '*[_type == "project"]';
 
-    client.fetch(query).then((data: IProjectCardProps[]) => {
-      setWorks(data);
-      setFilterWork(data);
+    client.fetch(query).then((data: ProjectType[]) => {
+      setProjects(transformData(data));
     });
   }, []);
-
-  const computedWork = filterWork.map((work, index) => ({ ...work, id: `${work.title}` }));
-
-  const testList: IProjectCardProps[] = [
-    {
-      id: "jeden",
-      imgUrl: "dwdw",
-      title: "test 1",
-      projectLink: "dwd",
-      codeLink: "dwd",
-      description: "lorem upsun",
-    },
-    {
-      id: "dwa",
-      imgUrl: "dwdw",
-      title: "test 2",
-      projectLink: "dwd",
-      codeLink: "dwd",
-      description: "lorem upsun",
-    },
-  ];
 
   return (
     <motion.div className="app__work-portfolio">
       <div className="card-list">
-        {testList.map((work) => (
-          <ProjectCard key={work.id} onClick={() => setSelectedItem(work)} {...work} />
+        {projects.map((work) => (
+          <ProjectCard key={work._id} onClick={() => setSelectedItem(work)} {...work} />
         ))}
       </div>
       <AnimatePresence>

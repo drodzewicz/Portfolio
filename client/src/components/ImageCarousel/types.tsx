@@ -1,7 +1,6 @@
 import { CarouselProps } from "react-responsive-carousel";
-
-type imageItemType = { id: string; src: any };
+import { ImageItemType } from "types";
 
 export interface IImageCarouselProps extends Partial<CarouselProps> {
-  images: imageItemType[];
+  images: ImageItemType[];
 }

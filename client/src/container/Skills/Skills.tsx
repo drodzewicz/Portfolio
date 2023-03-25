@@ -1,21 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-import { urlFor, client } from "../../client";
-import "./Skills.scss";
+import { client } from "../../client";
 import AppWrap from "wrapper/AppWrap";
 import MotionWrap from "wrapper/MotionWrap/MotionWrap";
 import PageWrap from "wrapper/PageWrap";
 import { section } from "constants/sections";
-
-interface SkillI {
-  name: string;
-  bgColor: string;
-  icon: string;
-}
+import SkillIcon from "components/SkillIcon/SkillIcon";
+import { SkillType } from "types";
+import "./Skills.scss";
 
 const Skills = () => {
-  const [skills, setSkills] = useState<SkillI[]>([]);
+  const [skills, setSkills] = useState<SkillType[]>([]);
 
   useEffect(() => {
     const skillsQuery = '*[_type == "skills"]';
@@ -29,12 +25,12 @@ const Skills = () => {
     <>
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
-          {skills.map((skill) => (
-            <div className="app__skills-item app__flex" key={skill.name}>
-              <div className="app__flex" style={{ backgroundColor: skill.bgColor }}>
-                <img src={urlFor(skill.icon).url()} alt={skill.name} />
+          {skills.map(({ skill, icon }) => (
+            <div className="app__skills-item app__flex" key={skill}>
+              <div className="app__flex">
+                <SkillIcon icon={icon} skill={skill} />
               </div>
-              <h3>{skill.name}</h3>
+              <h3>{skill}</h3>
             </div>
           ))}
         </motion.div>

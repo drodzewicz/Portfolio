@@ -1,10 +1,3 @@
-export interface IExperienceCardProps {
-  companyName: string;
-  country: string;
-  city: string;
-  dateStarted: string;
-  dateFinished?: string;
-  position: string;
-  description: string;
-  techStack: string[];
-}
+import { ExperienceType } from "types";
+
+export interface IExperienceCardProps extends ExperienceType {}

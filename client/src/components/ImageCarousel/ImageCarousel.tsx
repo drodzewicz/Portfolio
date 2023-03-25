@@ -7,8 +7,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 const ImageCarousel: React.FC<IImageCarouselProps> = ({ images, ...otherProps }) => {
   return (
     <Carousel {...otherProps}>
-      {images.map(({ id, src }) => (
-        <img key={id} src={src} alt="some" className="carousel-image" />
+      {images.map(({ _id, src }) => (
+        <img key={_id} src={src} alt="some" className="carousel-image" />
       ))}
     </Carousel>
   );

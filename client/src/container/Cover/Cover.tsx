@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { images } from "constants/index";
 import AppWrap from "wrapper/AppWrap/AppWrap";
 import sectionConfig, { section } from "constants/sections";
-import { IconType } from "react-icons/lib";
 
 const Cover = () => {
   const displaySections = [section.WORK, section.EXPERIENCE, section.SKILLS];

@@ -1,7 +1,7 @@
 import React from "react";
 import "./EducationCard.scss";
 import { IEducationProps } from "./types";
-import { images } from "constants/index";
+import { urlFor } from "client";
 
 const Education: React.FC<IEducationProps> = ({
   institution,
@@ -9,11 +9,16 @@ const Education: React.FC<IEducationProps> = ({
   yearEnded = "present",
   degree,
   fieldOfStudy,
+  institutionLogo,
 }) => {
   return (
     <div className="education-card">
       <div className="education-card__header">
-        <img className="education-card__logo" src={images.node} alt="institution logo" />
+        <img
+          className="education-card__logo"
+          src={urlFor(institutionLogo).url()}
+          alt="institution logo"
+        />
         <span className="education-card__text">{`${yearStarted} - ${yearEnded}`}</span>
       </div>
       <h2 className="education-card__title">{institution}</h2>

@@ -9,8 +9,10 @@ import {
   RiFileTextLine,
   RiAccountPinBoxLine,
 } from "react-icons/ri";
-import { images } from "constants/index";
 import Collapse from "components/Collapse/Collapse";
+import SkillIcon from "components/SkillIcon/SkillIcon";
+import Markdown from "markdown-to-jsx";
+import { urlFor } from "client";
 
 const ExperienceCard: React.FC<IExperienceCardProps> = ({
   companyName,
@@ -21,6 +23,7 @@ const ExperienceCard: React.FC<IExperienceCardProps> = ({
   position,
   description,
   techStack,
+  companyLogo,
 }) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
@@ -28,7 +31,7 @@ const ExperienceCard: React.FC<IExperienceCardProps> = ({
     <div className="experience">
       <div className="experience__header">
         <img
-          src={images.react}
+          src={urlFor(companyLogo).url()}
           title={companyName}
           alt={`${companyName} logo`}
           className="experience__header__logo"
@@ -59,22 +62,24 @@ const ExperienceCard: React.FC<IExperienceCardProps> = ({
         <h4>
           <RiFileTextLine /> Job description
         </h4>
-        <p className="experience__description">{description}</p>
+        <Markdown className="experience__description" options={{ wrapper: "p" }}>
+          {description}
+        </Markdown>
         <h4>
           <RiStackFill /> Tech stack{" "}
         </h4>
         <section className="experience__tech-stack">
-          {techStack.map((technology) => (
-            <div key={technology}>
-              <img
+          {techStack.map(({ skill, icon }) => (
+            <div key={skill}>
+              <SkillIcon
                 data-tip
-                data-for={`${companyName}-${technology}-techstach-tooltip`}
-                src={images.react}
-                alt="logo"
+                data-for={`${companyName}-${skill}-techstach-tooltip`}
+                icon={icon}
+                skill={skill}
                 className="experience__tech-stack-logo"
               />
-              <ReactTooltip id={`${companyName}-${technology}-techstach-tooltip`} effect="solid">
-                {technology}
+              <ReactTooltip id={`${companyName}-${skill}-techstach-tooltip`} effect="solid">
+                {skill}
               </ReactTooltip>
             </div>
           ))}

@@ -2,26 +2,11 @@ import React from "react";
 import { IProjectCardProps } from "./types";
 import "./ProjectCard.scss";
 import { motion } from "framer-motion";
-import { urlFor } from "client";
-import { AiFillEye, AiFillGithub } from "react-icons/ai";
-import { images } from "constants/index";
 
-interface OtherProps extends IProjectCardProps {
-  onClick?: () => void;
-}
-
-const ProjectCard: React.FC<OtherProps> = ({
-  id,
-  imgUrl,
-  title,
-  projectLink,
-  codeLink,
-  description,
-  onClick,
-}) => {
+const ProjectCard: React.FC<IProjectCardProps> = ({ _id, title, onClick, images }) => {
   return (
-    <motion.div layoutId={`project-card-${id}`} onClick={onClick} className="project-card">
-      <img className="project-card__cover-image" src={images.about01} alt={title} />
+    <motion.div layoutId={`project-card-${_id}`} onClick={onClick} className="project-card">
+      <img className="project-card__cover-image" src={images[0]?.src} alt={title} />
       <h4 className="project-card__title">{title}</h4>
     </motion.div>
   );
