@@ -1,21 +1,19 @@
 import React from "react";
+import sectionConfig from "constants/sections";
+import NavigationDot from "./NavigationDot";
+import { INavigationDotsProps } from "./types";
 
-interface NavigationDotsProps {
-    active: string
-}
 
-const NavigationDots: React.FC<NavigationDotsProps> = ({ active }) => {
-  const navigationitems: string[] = ["home", "about", "contact", "work", "skills"];
-
+const NavigationDots: React.FC<INavigationDotsProps> = ({ active }) => {
   return (
     <div className="app__navigation">
-      {navigationitems.map((navItem) => (
-        <a
-          key={`link-${navItem}`}
-          href={`#${navItem}`}
-          className="app__navigation-dot"
-          style={active === navItem ? { backgroundColor: "#313BAC" } : {}}>
-        </a>
+      {Object.entries(sectionConfig).map(([name, icon]) => (
+        <NavigationDot
+          key={`link-${name}`}
+          name={name}
+          icon={icon}
+          active={active} 
+          />
       ))}
     </div>
   );

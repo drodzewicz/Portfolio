@@ -35,6 +35,10 @@ import nb from "../assets/nb.png";
 import skype from "../assets/skype.png";
 import spotify from "../assets/spotify.png";
 
+import documentItem from "../assets/docs-item.svg";
+import someImage from "../assets/image.png";
+import computer from "../assets/computer-image.png";
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   email,
@@ -70,4 +74,7 @@ export default {
   nb,
   skype,
   spotify,
+  documentItem,
+  someImage,
+  computer,
 };

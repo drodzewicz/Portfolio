@@ -1,0 +1,23 @@
+.education-card {
+    background-color: white;
+    border-radius: 0.7rem;
+    padding: 0.5rem 0.8rem;
+    box-shadow: 0 0 25px rgba(103, 119, 144, 0.1);
+    width: 19rem;
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+
+    &__logo {
+        object-fit: contain;
+        height: 3rem;
+        width: 3rem;
+    }
+    &__text {
+        color: var(--gray-color);
+    }
+
+}

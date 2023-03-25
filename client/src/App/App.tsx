@@ -1,17 +1,17 @@
-import React from "react";
+import React, { ComponentType } from "react";
 import "./App.scss";
-import { Header, Footer, About, Work, Skills } from "container";
-import { Navbar } from "components/Navbar";
+import pages from "container";
+import sectionConfig from "constants/sections";
 
-function App() {
-  return <div className="app">
-    <Navbar />
-    <Header />
-    <About />
-    <Work />
-    <Skills />
-    <Footer />
-  </div>;
-}
+const App = () => {
+  return (
+    <div className="app">
+      {Object.keys(sectionConfig).map((name) => {
+        const Page: ComponentType = pages[name];
+        return <Page key={`page-${name}`} />;
+      })}
+    </div>
+  );
+};
 
 export default App;
