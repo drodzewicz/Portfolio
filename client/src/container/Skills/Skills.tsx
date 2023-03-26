@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+import { section } from "constants/sections";
 import { motion } from "framer-motion";
-
-import { client } from "../../client";
+import React, { useEffect, useState } from "react";
+import { SkillType } from "types";
 import AppWrap from "wrapper/AppWrap";
 import MotionWrap from "wrapper/MotionWrap/MotionWrap";
 import PageWrap from "wrapper/PageWrap";
-import { section } from "constants/sections";
+
 import SkillIcon from "components/SkillIcon/SkillIcon";
-import { SkillType } from "types";
+
+import { client } from "../../client";
 import "./Skills.scss";
 
 const Skills = () => {

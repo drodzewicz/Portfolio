@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
-
-import { client } from "../../client";
+import { section } from "constants/sections";
+import React, { useEffect, useState } from "react";
+import { EducationType, ExperienceType } from "types";
 import AppWrap from "wrapper/AppWrap";
 import MotionWrap from "wrapper/MotionWrap/MotionWrap";
 import PageWrap from "wrapper/PageWrap";
-import { section } from "constants/sections";
-import ExperienceCard from "components/ExperienceCard";
+
 import EducationCard from "components/EducationCard";
-import { EducationType, ExperienceType } from "types";
+import ExperienceCard from "components/ExperienceCard";
+
+import { client } from "../../client";
 import "./Experience.scss";
 
 const Experience = () => {

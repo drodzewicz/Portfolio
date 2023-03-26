@@ -1,16 +1,20 @@
-import React from "react";
-import "./Cover.scss";
-import { motion } from "framer-motion";
 import { images } from "constants/index";
-import AppWrap from "wrapper/AppWrap/AppWrap";
 import sectionConfig, { section } from "constants/sections";
+import { motion } from "framer-motion";
+import React from "react";
+import AppWrap from "wrapper/AppWrap/AppWrap";
+
+import "./Cover.scss";
 
 const Cover = () => {
   const displaySections = [section.WORK, section.EXPERIENCE, section.SKILLS];
   return (
     <div className="app__flex cover-container">
       <div>
-        <motion.div whileInView={{ x: [-100, 0], opacity: [0, 1] }} transition={{ duration: 0.5 }}>
+        <motion.div
+          whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+          transition={{ duration: 0.5 }}
+        >
           <h3 className="head-text">Let me introduce myself</h3>
           <h3 className="head-text">My name is</h3>
           <h2 className="head-text">
@@ -21,7 +25,11 @@ const Cover = () => {
             {displaySections.map((sectionName) => {
               const SectionIcon = sectionConfig[sectionName];
               return (
-                <a key={`cover-nav-${sectionName}`} className="cover-link" href={`#${sectionName}`}>
+                <a
+                  key={`cover-nav-${sectionName}`}
+                  className="cover-link"
+                  href={`#${sectionName}`}
+                >
                   {SectionIcon && <SectionIcon className="icon" />}
                   <span>{sectionName}</span>
                 </a>
@@ -30,7 +38,11 @@ const Cover = () => {
           </div>
         </motion.div>
       </div>
-      <img className="cover-computer-img" src={images.computer} alt="document-item" />
+      <img
+        className="cover-computer-img"
+        src={images.computer}
+        alt="document-item"
+      />
     </div>
   );
 };

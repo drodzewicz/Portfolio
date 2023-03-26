@@ -1,8 +1,8 @@
-import React from "react";
 import sectionConfig from "constants/sections";
+import React from "react";
+
 import NavigationDot from "./NavigationDot";
 import { INavigationDotsProps } from "./types";
-
 
 const NavigationDots: React.FC<INavigationDotsProps> = ({ active }) => {
   return (
@@ -12,8 +12,8 @@ const NavigationDots: React.FC<INavigationDotsProps> = ({ active }) => {
           key={`link-${name}`}
           name={name}
           icon={icon}
-          active={active} 
-          />
+          active={active}
+        />
       ))}
     </div>
   );

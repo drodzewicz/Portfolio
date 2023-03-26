@@ -1,11 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
-import "./Contact.scss";
+import { section } from "constants/sections";
+import React, { useEffect, useRef, useState } from "react";
 import AppWrap from "wrapper/AppWrap/AppWrap";
 import MotionWrap from "wrapper/MotionWrap/MotionWrap";
 import PageWrap from "wrapper/PageWrap";
+
+import "./Contact.scss";
 import ContactForm from "./ContactForm";
 import SubmitMessage from "./SubmitMessage";
-import { section } from "constants/sections";
 
 const Footer: React.FC = () => {
   const timeoutId = useRef<NodeJS.Timeout>();

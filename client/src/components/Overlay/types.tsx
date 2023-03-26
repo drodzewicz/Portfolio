@@ -1,3 +1,3 @@
 export interface IOverlayProps {
-    onClick?: () => void;
+  onClick?: () => void;
 }

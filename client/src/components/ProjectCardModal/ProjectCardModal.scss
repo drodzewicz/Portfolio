@@ -30,9 +30,13 @@ $card-size-min: 400px;
     left: 1rem;
   }
 
-  .carousel-image {
-    width: 100%;
-    object-fit: cover;
+  .carousel-root,
+  .carousel,
+  .slider-wrapper,
+  ul.slider,
+  img.carousel-image {
+    height: 100%;
+    width: auto !important;
   }
 
   &__content {

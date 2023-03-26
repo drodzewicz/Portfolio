@@ -1,7 +1,8 @@
-import React, { useState } from "react";
 import { client } from "client";
-import { FormMessage, IContactFormProps } from "./types";
 import { images } from "constants/index";
+import React, { useState } from "react";
+
+import { FormMessage, IContactFormProps } from "./types";
 
 const ContactForm: React.FC<IContactFormProps> = ({ setIsFormSubmitted }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -58,7 +59,11 @@ const ContactForm: React.FC<IContactFormProps> = ({ setIsFormSubmitted }) => {
         name="message"
         onChange={handleChangeInput}
       />
-      <button type="button" className="app__contact-submit" onClick={handleSubmit}>
+      <button
+        type="button"
+        className="app__contact-submit"
+        onClick={handleSubmit}
+      >
         {!isLoading ? "Send Message" : "Sending..."}
       </button>
     </div>

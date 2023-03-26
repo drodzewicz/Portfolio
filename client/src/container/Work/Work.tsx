@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
 import { client, urlFor } from "client";
+import { section } from "constants/sections";
+import { AnimatePresence, motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { ProjectType } from "types";
 import AppWrap from "wrapper/AppWrap";
 import MotionWrap from "wrapper/MotionWrap/MotionWrap";
 import PageWrap from "wrapper/PageWrap";
-import { section } from "constants/sections";
+
 import ProjectCard from "components/ProjectCard";
 import ProjectCardModal from "components/ProjectCardModal";
-import { ProjectType } from "types";
+
 import "./Work.scss";
 
 const Work = () => {
@@ -37,7 +38,11 @@ const Work = () => {
     <motion.div className="app__work-portfolio">
       <div className="card-list">
         {projects.map((work) => (
-          <ProjectCard key={work._id} onClick={() => setSelectedItem(work)} {...work} />
+          <ProjectCard
+            key={work._id}
+            onClick={() => setSelectedItem(work)}
+            {...work}
+          />
         ))}
       </div>
       <AnimatePresence>

@@ -1,18 +1,20 @@
+import { urlFor } from "client";
+import Markdown from "markdown-to-jsx";
 import React, { useState } from "react";
-import { IExperienceCardProps } from "./types";
-import "./ExperienceCard.scss";
-import ReactTooltip from "react-tooltip";
 import {
-  RiMoreFill,
-  RiArrowUpSFill,
-  RiStackFill,
-  RiFileTextLine,
   RiAccountPinBoxLine,
+  RiArrowUpSFill,
+  RiFileTextLine,
+  RiMoreFill,
+  RiStackFill,
 } from "react-icons/ri";
+import ReactTooltip from "react-tooltip";
+
 import Collapse from "components/Collapse/Collapse";
 import SkillIcon from "components/SkillIcon/SkillIcon";
-import Markdown from "markdown-to-jsx";
-import { urlFor } from "client";
+
+import "./ExperienceCard.scss";
+import { IExperienceCardProps } from "./types";
 
 const ExperienceCard: React.FC<IExperienceCardProps> = ({
   companyName,
@@ -54,7 +56,8 @@ const ExperienceCard: React.FC<IExperienceCardProps> = ({
       <div className="experience__footer">
         <button
           className="experience__footer__more-btn"
-          onClick={() => setIsExpanded((expaned) => !expaned)}>
+          onClick={() => setIsExpanded((expaned) => !expaned)}
+        >
           {isExpanded ? <RiArrowUpSFill /> : <RiMoreFill />}
         </button>
       </div>
@@ -62,7 +65,10 @@ const ExperienceCard: React.FC<IExperienceCardProps> = ({
         <h4>
           <RiFileTextLine /> Job description
         </h4>
-        <Markdown className="experience__description" options={{ wrapper: "p" }}>
+        <Markdown
+          className="experience__description"
+          options={{ wrapper: "p" }}
+        >
           {description}
         </Markdown>
         <h4>
@@ -78,7 +84,10 @@ const ExperienceCard: React.FC<IExperienceCardProps> = ({
                 skill={skill}
                 className="experience__tech-stack-logo"
               />
-              <ReactTooltip id={`${companyName}-${skill}-techstach-tooltip`} effect="solid">
+              <ReactTooltip
+                id={`${companyName}-${skill}-techstach-tooltip`}
+                effect="solid"
+              >
                 {skill}
               </ReactTooltip>
             </div>

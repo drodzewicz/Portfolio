@@ -1,7 +1,8 @@
+import { urlFor } from "client";
 import React from "react";
+
 import "./EducationCard.scss";
 import { IEducationProps } from "./types";
-import { urlFor } from "client";
 
 const Education: React.FC<IEducationProps> = ({
   institution,

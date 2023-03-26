@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { IOverlayProps } from "./types";
+
 import "./Overlay.scss";
+import { IOverlayProps } from "./types";
 
 const Overlay: React.FC<IOverlayProps> = ({ onClick }) => {
   return (

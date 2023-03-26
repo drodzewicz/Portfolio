@@ -1,12 +1,14 @@
-import React from "react";
-import { IProjectCardProps } from "./types";
-import "./ProjectCardModal.scss";
 import { motion } from "framer-motion";
-import Overlay from "components/Overlay/Overlay";
 import Markdown from "markdown-to-jsx";
+import React from "react";
 import { RiGithubFill, RiLiveFill } from "react-icons/ri";
+
 import ImageCarousel from "components/ImageCarousel/ImageCarousel";
+import Overlay from "components/Overlay/Overlay";
 import SkillIcon from "components/SkillIcon/SkillIcon";
+
+import "./ProjectCardModal.scss";
+import { IProjectCardProps } from "./types";
 
 const motionAnimation = {
   actionButtonText: {
@@ -37,7 +39,8 @@ const ProjectCardModal: React.FC<IProjectCardProps> = ({
       <motion.div className="project-card-modal">
         <motion.div
           layoutId={`project-card-${_id}`}
-          className="project-card-modal__image-container">
+          className="project-card-modal__image-container"
+        >
           <ImageCarousel
             images={images}
             swipeable
@@ -49,17 +52,32 @@ const ProjectCardModal: React.FC<IProjectCardProps> = ({
         </motion.div>
         <motion.div
           initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto", transition: { delay: 0.3, duration: 0.3 } }}
+          animate={{
+            opacity: 1,
+            height: "auto",
+            transition: { delay: 0.3, duration: 0.3 },
+          }}
           exit={{ opacity: 0, height: 0, transition: { duration: 0 } }}
-          className="project-card-modal__content">
+          className="project-card-modal__content"
+        >
           <div className="project-card-modal__button-container">
-            <motion.button {...motionAnimation.actionButton} className="project-card-modal__button">
+            <motion.button
+              {...motionAnimation.actionButton}
+              className="project-card-modal__button"
+            >
               <RiGithubFill />
-              <motion.span {...motionAnimation.actionButtonText}>Github</motion.span>
+              <motion.span {...motionAnimation.actionButtonText}>
+                Github
+              </motion.span>
             </motion.button>
-            <motion.button {...motionAnimation.actionButton} className="project-card-modal__button">
+            <motion.button
+              {...motionAnimation.actionButton}
+              className="project-card-modal__button"
+            >
               <RiLiveFill />
-              <motion.span {...motionAnimation.actionButtonText}>Live preview</motion.span>
+              <motion.span {...motionAnimation.actionButtonText}>
+                Live preview
+              </motion.span>
             </motion.button>
           </div>
           <h4>Tech stack</h4>
@@ -74,7 +92,10 @@ const ProjectCardModal: React.FC<IProjectCardProps> = ({
             ))}
           </div>
           <h4>Description</h4>
-          <Markdown className="project-card-modal__description" options={{ wrapper: "p" }}>
+          <Markdown
+            className="project-card-modal__description"
+            options={{ wrapper: "p" }}
+          >
             {description}
           </Markdown>
         </motion.div>

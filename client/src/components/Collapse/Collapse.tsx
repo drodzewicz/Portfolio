@@ -1,5 +1,6 @@
-import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import React from "react";
+
 import "./Collapse.scss";
 
 type Props = { show: boolean; className?: string };
@@ -18,7 +19,8 @@ const Collapse: React.FC<Props> = ({ show, children, className = "" }) => {
             open: { height: "auto" },
             collapsed: { height: 0 },
           }}
-          transition={{ duration: 0.4 }}>
+          transition={{ duration: 0.4 }}
+        >
           {children}
         </motion.section>
       )}

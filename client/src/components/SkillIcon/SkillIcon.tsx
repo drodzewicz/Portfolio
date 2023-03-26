@@ -1,8 +1,13 @@
-import React from "react";
-import { ISkillIconProps } from "./types";
 import SKILL_ICON from "constants/skillIcons";
+import React from "react";
 
-const SkillIcon: React.FC<ISkillIconProps> = ({ icon, skill, ...otherProps }) => {
+import { ISkillIconProps } from "./types";
+
+const SkillIcon: React.FC<ISkillIconProps> = ({
+  icon,
+  skill,
+  ...otherProps
+}) => {
   return (
     <img
       {...otherProps}
