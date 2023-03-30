@@ -25,14 +25,16 @@ const Cover = () => {
             {displaySections.map((sectionName) => {
               const SectionIcon = sectionConfig[sectionName];
               return (
-                <a
+                <motion.a
                   key={`cover-nav-${sectionName}`}
                   className="cover-link"
                   href={`#${sectionName}`}
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: [0, 1] }}
                 >
                   {SectionIcon && <SectionIcon className="icon" />}
-                  <span>{sectionName}</span>
-                </a>
+                  <motion.span>{sectionName}</motion.span>
+                </motion.a>
               );
             })}
           </div>

@@ -1,14 +1,17 @@
 $card-size: 50vh;
-$card-width: $card-size * 0.6;
 
 .project-card {
   width: $card-size;
-  height: $card-width;
+  height: $card-size * 0.6;
   position: relative;
   overflow: hidden;
   border-radius: 0.3rem;
   transition: box-shadow 0.3s ease-in-out;
   box-shadow: 0 0 12px rgba(180, 209, 222, 0.1);
+
+  max-width: 80vw;
+  max-height: 80vw * 0.6;
+
 
   &:hover {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);

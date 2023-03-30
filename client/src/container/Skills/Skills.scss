@@ -1,3 +1,5 @@
+$skill-item-size: 90px;
+
 .app {
   &__skills-item {
     flex-direction: column;
@@ -8,10 +10,15 @@
     transition: all 0.3s ease-in-out;
   
     div {
-      width: 90px;
-      height: 90px;
+      width: $skill-item-size;
+      height: $skill-item-size;
       border-radius: 50%;
       background-color: #fef4f5;
+
+      @media (max-width: 500px) {
+        width: $skill-item-size * 0.7;
+        height: $skill-item-size * 0.7;
+      }
   
       img {
         width: 50%;
@@ -23,6 +30,10 @@
       }
      
     }
+  }
+
+  &__skills-name {
+    margin-top: 0.5rem;
   }
   
   &__skills-list {

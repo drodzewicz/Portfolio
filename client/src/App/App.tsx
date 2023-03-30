@@ -3,6 +3,7 @@ import "./App.scss";
 import pages from "container";
 import sectionConfig from "constants/sections";
 
+
 const App = () => {
   return (
     <div className="app">

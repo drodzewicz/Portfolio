@@ -20,7 +20,7 @@ interface ISectionConfig {
   icon: IconType;
 }
 
-const sectionConfig: Record<section, IconType> = {
+const sectionConfig: Record<string, IconType> = {
   [section.COVER]: RiHomeSmileLine,
   [section.EXPERIENCE]: RiTimeLine,
   [section.WORK]: RiRocket2Fill,

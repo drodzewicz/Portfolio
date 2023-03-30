@@ -31,7 +31,7 @@ const Skills = () => {
               <div className="app__flex">
                 <SkillIcon icon={icon} skill={skill} />
               </div>
-              <h3>{skill}</h3>
+              <p className="app__skills-name">{skill}</p>
             </div>
           ))}
         </motion.div>

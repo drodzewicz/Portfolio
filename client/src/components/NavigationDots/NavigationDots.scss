@@ -1,21 +1,42 @@
-.app__navigation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 1rem;
+$navBarHeight: 282px;
 
-  .app__navigation-dot {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: var(--light-blue-tone-2);
-    color: var(--blue-tone-1);
-    margin: 0.5rem;
-    display: grid;
-    place-items: center;
-    transition: all 0.2s ease-in-out;
+.app__navigation-container {
+  position: relative;
+  padding: 0 0.5rem;
+  @media (max-width: 750px) {
+    display: none;
   }
+}
+
+.app__navigation {
+  top: calc((100vh - 282px) / 2);
+  margin-top: calc((100vh - 282px) / 2);
+  margin-bottom: calc((100vh - 282px) / 2);
+  position: sticky;
+}
+
+.app__navigation-dot {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--light-blue-tone-2);
+  color: var(--blue-tone-1);
+  margin: 0.5rem;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.app__navigation-menu {
+  display: none;
+  @media (max-width: 950px) {
+    display: grid;
+  }
+}
+
+.app__container {
+  position: relative;
 }
 
 .app__container:nth-child(even) {

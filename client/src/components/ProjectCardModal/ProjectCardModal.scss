@@ -1,11 +1,13 @@
 $card-size: 70vh;
-$card-size-min: 400px;
+$card-size-min: 350px;
+$card-size-max: 80vw;
 
 .project-card-modal {
   width: $card-size;
   min-width: $card-size-min;
+  max-width: $card-size-max;
   height: auto;
-  max-height: 85vh;
+  // max-height: 85vh;
   top: 2rem;
   left: 0;
   right: 0;
@@ -19,6 +21,7 @@ $card-size-min: 400px;
     position: relative;
     height: $card-size * 0.6;
     min-height: $card-size-min * 0.6;
+    max-height: $card-size-max * 0.6;
     overflow: hidden;
     z-index: 1;
   }

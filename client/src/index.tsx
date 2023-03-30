@@ -1,14 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from 'App/App';
-import reportWebVitals from './reportWebVitals';
+import App from "App/App";
+import { MenuProvider } from "context/MenuContext";
+import React from "react";
+import ReactDOM from "react-dom";
+
 import "./index.scss";
+import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MenuProvider>
+      <App />
+    </MenuProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 reportWebVitals();
