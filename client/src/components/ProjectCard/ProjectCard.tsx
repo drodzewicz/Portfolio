@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { usePalette } from "react-palette";
 
 import "./ProjectCard.scss";
 import { IProjectCardProps } from "./types";
@@ -10,6 +11,7 @@ const ProjectCard: React.FC<IProjectCardProps> = ({
   onClick,
   images,
 }) => {
+  const { data } = usePalette(images[0]?.src);
   return (
     <motion.div
       layoutId={`project-card-${_id}`}
@@ -21,7 +23,12 @@ const ProjectCard: React.FC<IProjectCardProps> = ({
         src={images[0]?.src}
         alt={title}
       />
-      <h4 className="project-card__title">{title}</h4>
+      <h2
+        className="project-card__title"
+        style={{ "--hightlight-color": data.vibrant } as React.CSSProperties}
+      >
+        {title}
+      </h2>
     </motion.div>
   );
 };

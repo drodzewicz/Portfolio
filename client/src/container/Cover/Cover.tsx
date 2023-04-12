@@ -23,7 +23,8 @@ const Cover = () => {
           <h3 className="head-text">Here you can find out more about my...</h3>
           <div className="app_flex cover-link-container">
             {displaySections.map((sectionName) => {
-              const SectionIcon = sectionConfig[sectionName];
+              const SectionIcon = sectionConfig[sectionName]?.icon;
+              const sectionLabel = sectionConfig[sectionName]?.name;
               return (
                 <motion.a
                   key={`cover-nav-${sectionName}`}
@@ -33,7 +34,7 @@ const Cover = () => {
                   whileInView={{ scale: [0, 1] }}
                 >
                   {SectionIcon && <SectionIcon className="icon" />}
-                  <motion.span>{sectionName}</motion.span>
+                  <motion.span>{sectionLabel}</motion.span>
                 </motion.a>
               );
             })}

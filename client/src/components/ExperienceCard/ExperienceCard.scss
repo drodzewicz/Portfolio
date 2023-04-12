@@ -50,20 +50,6 @@
     }
   }
 
-  &__tech-stack {
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  &__tech-stack-logo {
-    width: 1.5rem;
-    height: 1.5rem;
-    object-fit: contain;
-    background-color: white;
-    border-radius: 50%;
-    padding: 0.2rem;
-  }
-
   &__position {
     padding: 0.3rem 0.8rem;
     background-color: var(--light-blue-tone-1);
@@ -71,29 +57,34 @@
     color: var(--blue-tone-1);
     display: flex;
     align-items: center;
-    align-self: flex-start;
     gap: 0.5rem;
     margin-bottom: 1rem;
     cursor: default;
   }
 
+  &__secondary-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   &__more-container {
     display: flex;
     flex-direction: column;
-    background-color: var(--light-blue-tone-1);
     border-radius: 5px;
-    padding: 0.4rem 0.6rem;
+  }
 
-    h4 {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--blue-tone-2);
-      margin: 0.3rem 0;
-      font-size: 0.9rem;
-    }
-    p {
-      color: var(--blue-tone-1);
-    }
+  &__description-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--blue-tone-2);
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+    text-decoration: underline;
+  }
+
+  &__description {
+    color: var(--gray-color);
   }
 }

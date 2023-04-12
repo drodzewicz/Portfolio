@@ -1,0 +1,19 @@
+.tech-stack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--light-blue-tone-1);
+  align-self: flex-start;
+  padding: 0.2rem 0.4rem;
+  border-radius: 1rem;
+
+  &__logo {
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 50%;
+    padding: 0.2rem;
+  }
+}

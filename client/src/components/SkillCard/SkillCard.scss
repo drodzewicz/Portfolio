@@ -1,0 +1,41 @@
+$skill-item-size: 90px;
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    transition: all 0.3s ease-in-out;
+
+    width: $skill-item-size;
+    height: $skill-item-size;
+    border-radius: 50%;
+    background-color: #fef4f5;
+    box-shadow: 0 0 0 #fef4f5;
+
+    &:hover {
+      box-shadow: 0 0 25px var(--hightlight-color, white);
+    }
+
+    @media (max-width: 500px) {
+      width: $skill-item-size * 0.7;
+      height: $skill-item-size * 0.7;
+    }
+  }
+
+  &__icon {
+    width: 50%;
+    height: 50%;
+  }
+
+  &__title {
+    margin-top: 0.5rem;
+  }
+}

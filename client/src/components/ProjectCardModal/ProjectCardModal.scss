@@ -98,15 +98,4 @@ $card-size-max: 80vw;
       border-radius: 2rem;
     }
   }
-  &__tech-stack-container {
-    display: flex;
-    gap: 0.2rem;
-    margin: 0.2rem 0;
-  }
-  &__tech-stack-icon {
-    border-radius: 50%;
-    width: 1.8rem;
-    height: 1.8rem;
-    padding: 0.2rem;
-  }
 }

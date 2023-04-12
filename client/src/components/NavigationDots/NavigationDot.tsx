@@ -6,6 +6,7 @@ import { INavigationDotProps } from "./types";
 
 const NavigationDot: React.FC<INavigationDotProps> = ({
   name,
+  label,
   icon,
   active,
   index,
@@ -27,7 +28,7 @@ const NavigationDot: React.FC<INavigationDotProps> = ({
         <IconComponent />
       </motion.a>
       <ReactTooltip id={`${name}_nav-got`} effect="solid" place="left" delayShow={500}>
-        {name}
+        {label}
       </ReactTooltip>
     </>
   );

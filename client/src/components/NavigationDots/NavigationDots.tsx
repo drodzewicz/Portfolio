@@ -11,11 +11,12 @@ const NavigationDots: React.FC<INavigationDotsProps> = ({ active }) => {
   return (
     <div className="app__navigation-container">
       <div className="app__navigation">
-        {Object.entries(sectionConfig).map(([name, icon], index) => (
+        {Object.entries(sectionConfig).map(([name, { icon, name: label }], index) => (
           <NavigationDot
             key={`link-${name}`}
             index={index}
             name={name}
+            label={label}
             icon={icon}
             active={active}
           />

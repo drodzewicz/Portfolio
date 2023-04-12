@@ -21,12 +21,12 @@ export default {
     {
       name: "dateStarted",
       title: "Date Started",
-      type: "string",
+      type: "datetime",
     },
     {
       name: "dateFinished",
       title: "Date Finished",
-      type: "string",
+      type: "datetime",
     },
     {
       name: "position",

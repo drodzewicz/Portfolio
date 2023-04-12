@@ -1,4 +1,5 @@
 import { urlFor } from "client";
+import { format } from "date-fns";
 import React from "react";
 
 import "./EducationCard.scss";
@@ -11,6 +12,7 @@ const Education: React.FC<IEducationProps> = ({
   degree,
   fieldOfStudy,
   institutionLogo,
+  dateFormat = "yyyy",
 }) => {
   return (
     <div className="education-card">
@@ -20,7 +22,10 @@ const Education: React.FC<IEducationProps> = ({
           src={urlFor(institutionLogo).url()}
           alt="institution logo"
         />
-        <span className="education-card__text">{`${yearStarted} - ${yearEnded}`}</span>
+        <span className="education-card__text">{`${format(
+          new Date(yearStarted),
+          dateFormat
+        )} - ${format(new Date(yearEnded), dateFormat)}`}</span>
       </div>
       <h2 className="education-card__title">{institution}</h2>
       <p className="education-card__text">{degree}</p>

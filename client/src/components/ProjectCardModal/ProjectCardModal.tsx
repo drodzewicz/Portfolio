@@ -9,6 +9,7 @@ import SkillIcon from "components/SkillIcon/SkillIcon";
 
 import "./ProjectCardModal.scss";
 import { IProjectCardProps } from "./types";
+import TechStack from "components/TechStack/TechStack";
 
 const motionAnimation = {
   actionButtonText: {
@@ -80,17 +81,9 @@ const ProjectCardModal: React.FC<IProjectCardProps> = ({
               </motion.span>
             </motion.button>
           </div>
-          <h4>Tech stack</h4>
-          <div className="project-card-modal__tech-stack-container">
-            {techStack.map(({ skill, icon }) => (
-              <SkillIcon
-                key={skill}
-                className="project-card-modal__tech-stack-icon"
-                icon={icon}
-                skill={skill}
-              />
-            ))}
-          </div>
+          <h3>{title}</h3>
+          <br />
+          <TechStack skills={techStack} />
           <h4>Description</h4>
           <Markdown
             className="project-card-modal__description"

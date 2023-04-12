@@ -1,23 +1,30 @@
-import api from "../assets/api.png";
-import cpp from "../assets/cpp.png";
-import css from "../assets/css.png";
-import figma from "../assets/figma.png";
-import flutter from "../assets/flutter.png";
-import git from "../assets/git.png";
-import graphql from "../assets/graphql.png";
-import html from "../assets/html.png";
-import javascript from "../assets/javascript.png";
-import node from "../assets/node.png";
-import python from "../assets/python.png";
-import react from "../assets/react.png";
-import redux from "../assets/redux.png";
-import sass from "../assets/sass.png";
-import typescript from "../assets/typescript.png";
-import vue from "../assets/vue.png";
-import brokenImage from "../assets/broken-image.png";
+import brokenImage from "assets/broken-image.png";
+
+import cpp from "assets/technologies/cpp.png";
+import css from "assets/technologies/css.png";
+import figma from "assets/technologies/figma.png";
+import flutter from "assets/technologies/flutter.png";
+import git from "assets/technologies/git.png";
+import graphql from "assets/technologies/graphql.png";
+import html from "assets/technologies/html.png";
+import javascript from "assets/technologies/javascript.png";
+import node from "assets/technologies/node.png";
+import python from "assets/technologies/python.png";
+import react from "assets/technologies/react.png";
+import redux from "assets/technologies/redux.png";
+import sass from "assets/technologies/sass.png";
+import typescript from "assets/technologies/typescript.png";
+import vue from "assets/technologies/vue.png";
+import java from "assets/technologies/java.png";
+import groovy from "assets/technologies/groovy.png";
+import grails from "assets/technologies/grails.png";
+import mysql from "assets/technologies/mysql.png";
+import mongo from "assets/technologies/mongo.png";
+import fastapi from "assets/technologies/fatapi.png";
+
 
 const icons: Record<string, string> = {
-  API_ICON: api,
+  BROKEN_IMAGE_ICON: brokenImage,
   CPP_ICON: cpp,
   CSS_ICON: css,
   FIGMA_ICON: figma,
@@ -25,15 +32,20 @@ const icons: Record<string, string> = {
   GIT_ICON: git,
   GRAPHQL_ICON: graphql,
   HTML_ICON: html,
-  JAVASCRIPT_ICON: javascript,
+  JS_ICON: javascript,
   NODE_ICON: node,
   PYTHON_ICON: python,
   REACT_ICON: react,
   REDUX_ICON: redux,
   SCSS_ICON: sass,
-  TYPESCRIPT_ICON: typescript,
+  TS_ICON: typescript,
   VUE_ICON: vue,
-  BROKEN_IMAGE_ICON: brokenImage,
+  JAVA_ICON: java,
+  GROOVY_ICON: groovy,
+  GRAILS_ICON: grails,
+  MYSQL_ICON: mysql,
+  MONGODB_ICON: mongo,
+  FAST_API_ICON: fastapi,
 };
 
 export default icons;

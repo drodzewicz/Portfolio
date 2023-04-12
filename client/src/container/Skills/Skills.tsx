@@ -6,6 +6,7 @@ import AppWrap from "wrapper/AppWrap";
 import MotionWrap from "wrapper/MotionWrap/MotionWrap";
 import PageWrap from "wrapper/PageWrap";
 
+import SkillCard from "components/SkillCard/SkillCard";
 import SkillIcon from "components/SkillIcon/SkillIcon";
 
 import { client } from "../../client";
@@ -27,12 +28,7 @@ const Skills = () => {
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
           {skills.map(({ skill, icon }) => (
-            <div className="app__skills-item app__flex" key={skill}>
-              <div className="app__flex">
-                <SkillIcon icon={icon} skill={skill} />
-              </div>
-              <p className="app__skills-name">{skill}</p>
-            </div>
+            <SkillCard key={skill} skill={skill} icon={icon} />
           ))}
         </motion.div>
       </div>

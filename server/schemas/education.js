@@ -7,12 +7,12 @@ export default {
     {
       name: "yearStarted",
       title: "Year Started",
-      type: "string",
+      type: "datetime",
     },
     {
       name: "yearEnded",
       title: "Year Ended",
-      type: "string",
+      type: "datetime",
     },
     {
       name: "degree",

@@ -1,3 +1,5 @@
 import { EducationType } from "types";
 
-export interface IEducationProps extends EducationType {}
+export interface IEducationProps extends EducationType {
+  dateFormat?: string;
+}
