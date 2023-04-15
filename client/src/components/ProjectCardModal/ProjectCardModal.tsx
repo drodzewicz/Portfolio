@@ -5,11 +5,10 @@ import { RiGithubFill, RiLiveFill } from "react-icons/ri";
 
 import ImageCarousel from "components/ImageCarousel/ImageCarousel";
 import Overlay from "components/Overlay/Overlay";
-import SkillIcon from "components/SkillIcon/SkillIcon";
+import TechStack from "components/TechStack/TechStack";
 
 import "./ProjectCardModal.scss";
 import { IProjectCardProps } from "./types";
-import TechStack from "components/TechStack/TechStack";
 
 const motionAnimation = {
   actionButtonText: {
@@ -62,29 +61,36 @@ const ProjectCardModal: React.FC<IProjectCardProps> = ({
           className="project-card-modal__content"
         >
           <div className="project-card-modal__button-container">
-            <motion.button
+            <motion.a
               {...motionAnimation.actionButton}
+              href={sourceCodeURL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="project-card-modal__button"
             >
               <RiGithubFill />
               <motion.span {...motionAnimation.actionButtonText}>
                 Github
               </motion.span>
-            </motion.button>
-            <motion.button
+            </motion.a>
+            <motion.a
               {...motionAnimation.actionButton}
+              href={demoURL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="project-card-modal__button"
             >
               <RiLiveFill />
               <motion.span {...motionAnimation.actionButtonText}>
                 Live preview
               </motion.span>
-            </motion.button>
+            </motion.a>
           </div>
-          <h3>{title}</h3>
           <br />
-          <TechStack skills={techStack} />
-          <h4>Description</h4>
+          <div className="project-card-modal__header">
+            <h3>{title}</h3>
+            <TechStack skills={techStack} />
+          </div>
           <Markdown
             className="project-card-modal__description"
             options={{ wrapper: "p" }}

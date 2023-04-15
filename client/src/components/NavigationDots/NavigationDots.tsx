@@ -1,6 +1,4 @@
 import sectionConfig from "constants/sections";
-import { MenuContext } from "context/MenuContext";
-import { AnimatePresence } from "framer-motion";
 import React from "react";
 
 import NavigationDot from "./NavigationDot";

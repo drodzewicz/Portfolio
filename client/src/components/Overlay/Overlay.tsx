@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { useEffect } from "react";
+import React from "react";
 
 import "./Overlay.scss";
 import { IOverlayProps } from "./types";

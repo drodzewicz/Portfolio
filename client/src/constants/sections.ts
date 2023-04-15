@@ -15,7 +15,7 @@ interface ISectionConfig {
   icon: IconType;
 }
 
-const sectionConfig: Record<section, ISectionConfig> = {
+const sectionConfig: Record<string, ISectionConfig> = {
   [section.COVER]: { icon: RiHomeSmileLine, name: "Home" },
   [section.EXPERIENCE]: { icon: RiTimeLine, name: "Experience" },
   [section.WORK]: { icon: RiRocket2Fill, name: "Projects" },

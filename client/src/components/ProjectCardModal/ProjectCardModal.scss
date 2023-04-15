@@ -70,6 +70,7 @@ $card-size-max: 80vw;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    text-decoration: none;
 
     span {
       overflow: hidden;
@@ -82,9 +83,18 @@ $card-size-max: 80vw;
       box-shadow: 0 0 12px var(--accent-seccondary-light);
     }
   }
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+  }
+
   &__description {
+    margin-top: 0.5rem;
     max-height: 20vh;
     overflow: auto;
+    color: var(--black-color);
+    
     &::-webkit-scrollbar {
       width: 0.7em;
       height: 0.7em;

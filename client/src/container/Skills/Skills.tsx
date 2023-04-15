@@ -7,7 +7,6 @@ import MotionWrap from "wrapper/MotionWrap/MotionWrap";
 import PageWrap from "wrapper/PageWrap";
 
 import SkillCard from "components/SkillCard/SkillCard";
-import SkillIcon from "components/SkillIcon/SkillIcon";
 
 import { client } from "../../client";
 import "./Skills.scss";
