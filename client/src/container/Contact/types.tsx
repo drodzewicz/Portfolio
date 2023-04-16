@@ -1,5 +1,4 @@
 export type FormMessage = {
-  name: string;
   email: string;
   message: string;
 };

@@ -7,12 +7,12 @@ import { FormMessage, IContactFormProps } from "./types";
 const ContactForm: React.FC<IContactFormProps> = ({ setIsFormSubmitted }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormMessage>({
-    name: "",
     email: "",
     message: "",
   });
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
     setIsLoading(true);
     sendMessage(formData).then(() => {
       setIsLoading(false);
@@ -27,6 +27,10 @@ const ContactForm: React.FC<IContactFormProps> = ({ setIsFormSubmitted }) => {
     setFormData((formData) => ({ ...formData, [name]: value }));
   };
 
+  const isValid = () => {
+    return formData.email || formData.email;
+  };
+
   return (
     <div className="app__contact-container">
       <div className="app__contact-container__text">
@@ -36,30 +40,32 @@ const ContactForm: React.FC<IContactFormProps> = ({ setIsFormSubmitted }) => {
           DRodzewicz@gmail.com
         </a>
         <h3 className="text-grey">Or</h3>
-        <h2>you can send you message using this forum</h2>
+        <h2>you can send your message using this form</h2>
       </div>
-      <input
-        className="app__contact-input"
-        type="email"
-        placeholder="Your Email"
-        name="email"
-        value={formData.email}
-        onChange={handleChangeInput}
-      />
-      <textarea
-        className="app__contact-input app__contact-body"
-        placeholder="Your Message"
-        value={formData.message}
-        name="message"
-        onChange={handleChangeInput}
-      />
-      <button
-        type="button"
-        className="app__contact-submit"
-        onClick={handleSubmit}
-      >
-        {!isLoading ? "Send Message" : "Sending..."}
-      </button>
+      <form className="app__contact-form" onSubmit={handleSubmit}>
+        <input
+          className="app__contact-input"
+          type="email"
+          placeholder="Your Email"
+          name="email"
+          value={formData.email}
+          onChange={handleChangeInput}
+        />
+        <textarea
+          className="app__contact-input app__contact-body"
+          placeholder="Your Message"
+          value={formData.message}
+          name="message"
+          onChange={handleChangeInput}
+        />
+        <button
+          type="submit"
+          className="app__contact-submit"
+          disabled={!isValid()}
+        >
+          {!isLoading ? "Send Message" : "Sending..."}
+        </button>
+      </form>
     </div>
   );
 };
