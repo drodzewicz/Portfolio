@@ -1,3 +1,5 @@
+import type {TypedObject} from '@portabletext/types'
+
 export type EducationType = {
   institution: string;
   degree: string;
@@ -20,7 +22,7 @@ export interface ExperienceType {
   dateStarted: string;
   dateFinished?: string;
   position: string;
-  description: string;
+  description: TypedObject | TypedObject[];
   techStack: SkillType[];
 }
 
@@ -29,7 +31,7 @@ export type ImageItemType = { _id: string; src: string };
 export type ProjectType = {
   _id: string;
   title: string;
-  description: string;
+  description: TypedObject | TypedObject[];
   demoURL: string;
   sourceCodeURL: string;
   techStack: SkillType[];

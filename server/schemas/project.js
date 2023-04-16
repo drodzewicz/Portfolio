@@ -11,7 +11,13 @@ export default {
     {
       name: "description",
       title: "Description",
-      type: "string",
+      type: "array",
+      of: [
+        {
+          type: "block",
+          title: "Block",
+        },
+      ],
     },
     {
       name: "demoURL",

@@ -1,15 +1,10 @@
+import { PortableText } from "@portabletext/react";
 import { urlFor } from "client";
 import { format, formatDistance } from "date-fns";
-import Markdown from "markdown-to-jsx";
 import React, { useState } from "react";
-import {
-  RiAccountPinBoxLine,
-  RiArrowUpSFill,
-  RiMoreFill,
-} from "react-icons/ri";
+import { RiAccountPinBoxLine } from "react-icons/ri";
 import ReactTooltip from "react-tooltip";
 
-import Collapse from "components/Collapse/Collapse";
 import TechStack from "components/TechStack/TechStack";
 
 import "./ExperienceCard.scss";
@@ -38,7 +33,7 @@ const ExperienceCard: React.FC<IExperienceCardProps> = ({
           alt={`${companyName} logo`}
           className="experience__header__logo"
         />
-        <div>
+        <div className="experience__header__main">
           <h3 className="experience__header__name">{companyName}</h3>
           <p className="experience__header__location">{`${country}, ${city}`}</p>
         </div>
@@ -47,17 +42,18 @@ const ExperienceCard: React.FC<IExperienceCardProps> = ({
           data-for={`${companyName}-time-tooltip`}
           className="experience__header__time"
         >
-          {`${format(new Date(dateStarted), dateFormat)} - ${
-            dateFinished
+          <span>{format(new Date(dateStarted), dateFormat)}</span>
+          <span>-</span>
+          <span>
+            {dateFinished
               ? format(new Date(dateFinished), dateFormat)
-              : "present"
-          }`}
+              : "present"}
+          </span>
         </p>
         <ReactTooltip id={`${companyName}-time-tooltip`} effect="solid">
           {formatDistance(
             dateFinished ? new Date(dateFinished) : Date.now(),
             new Date(dateStarted),
-            { addSuffix: false }
           )}
         </ReactTooltip>
       </div>
@@ -68,23 +64,14 @@ const ExperienceCard: React.FC<IExperienceCardProps> = ({
         </span>
         <TechStack skills={techStack} />
       </div>
-      <div className="experience__footer">
-        <button
-          className="experience__footer__more-btn"
-          onClick={() => setIsExpanded((expaned) => !expaned)}
-        >
-          {isExpanded ? <RiArrowUpSFill /> : <RiMoreFill />}
-        </button>
+      <div
+        onClick={() => setIsExpanded((expaned) => !expaned)}
+        className={`experience__description ${
+          isExpanded ? "experience__description--expanded" : ""
+        }`}
+      >
+        <PortableText value={description} />
       </div>
-      <Collapse show={isExpanded} className="experience__more-container ">
-        <h4 className="experience__description-title">Job description</h4>
-        <Markdown
-          className="experience__description"
-          options={{ wrapper: "p" }}
-        >
-          {description}
-        </Markdown>
-      </Collapse>
     </div>
   );
 };

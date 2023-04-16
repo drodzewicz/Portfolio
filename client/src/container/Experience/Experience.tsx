@@ -18,8 +18,11 @@ const Experience = () => {
   useEffect(() => {
     const query = '*[_type == "experiences"]';
 
-    client.fetch(query).then((data) => {
-      setExperiences(data);
+    client.fetch(query).then((data: ExperienceType[]) => {
+      const sortedExperience = data.sort((a, b) => {
+        return new Date(b.dateStarted).getTime() - new Date(a.dateStarted).getTime();
+      })
+      setExperiences(sortedExperience);
     });
 
     const queryed = '*[_type == "education"]';

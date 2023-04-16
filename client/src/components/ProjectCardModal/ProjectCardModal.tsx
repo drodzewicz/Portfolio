@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
-import Markdown from "markdown-to-jsx";
 import React from "react";
 import { RiGithubFill, RiLiveFill } from "react-icons/ri";
 
-import ImageCarousel from "components/ImageCarousel/ImageCarousel";
+import ImageCarousel from "components/ImageCarousel";
 import Overlay from "components/Overlay/Overlay";
 import TechStack from "components/TechStack/TechStack";
 
 import "./ProjectCardModal.scss";
 import { IProjectCardProps } from "./types";
+import { PortableText } from "@portabletext/react";
 
 const motionAnimation = {
   actionButtonText: {
@@ -91,12 +91,9 @@ const ProjectCardModal: React.FC<IProjectCardProps> = ({
             <h3>{title}</h3>
             <TechStack skills={techStack} />
           </div>
-          <Markdown
-            className="project-card-modal__description"
-            options={{ wrapper: "p" }}
-          >
-            {description}
-          </Markdown>
+          <div className="project-card-modal__description">
+            <PortableText value={description} />
+          </div>
         </motion.div>
       </motion.div>
     </>
