@@ -1,0 +1,20 @@
+$break-point-1: 500px;
+$break-point-2: 900px;
+$break-point-3: 1200px;
+
+@mixin mq-1 {
+  @media (max-width: #{$break-point-1}) {
+    @content;
+  }
+}
+
+@mixin mq-2 {
+  @media (max-width: #{$break-point-2}) {
+    @content;
+  }
+}
+@mixin mq-3 {
+  @media (max-width: #{$break-point-3}) {
+    @content;
+  }
+}

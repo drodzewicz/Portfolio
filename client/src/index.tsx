@@ -3,7 +3,7 @@ import { MenuProvider } from "context/MenuContext";
 import React from "react";
 import ReactDOM from "react-dom";
 
-import "./index.scss";
+import "assets/styles/index.scss";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(

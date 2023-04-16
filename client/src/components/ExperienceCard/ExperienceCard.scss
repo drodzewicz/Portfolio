@@ -1,3 +1,5 @@
+@import "/src/assets/styles/mixins";
+
 .experience {
   background-color: white;
   padding: 1rem 1.5rem;
@@ -8,7 +10,7 @@
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 900px) {
+  @include mq-2 {
     width: 100%;
   }
 

@@ -1,8 +1,13 @@
+@import "/src/assets/styles/mixins";
+
 .cover-container {
   height: 100%;
   flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  @media (max-width: 1200px) {
+  @include mq-3 {
     flex-direction: column;
   }
 
@@ -33,7 +38,7 @@
     border-radius: 0.7rem;
     transition: all 0.2s ease-in-out;
 
-    @media (max-width: 900px) {
+    @include mq-2 {
       font-size: 2vh;
     }
 

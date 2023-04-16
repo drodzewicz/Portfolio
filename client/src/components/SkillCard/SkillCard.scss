@@ -1,3 +1,4 @@
+@import "/src/assets/styles/mixins";
 $skill-item-size: 90px;
 
 .skill-card {
@@ -24,7 +25,7 @@ $skill-item-size: 90px;
       box-shadow: 0 0 25px var(--hightlight-color, white);
     }
 
-    @media (max-width: 500px) {
+    @include mq-1 {
       width: $skill-item-size * 0.7;
       height: $skill-item-size * 0.7;
     }

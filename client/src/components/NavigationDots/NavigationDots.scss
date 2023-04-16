@@ -1,9 +1,11 @@
+@import "/src/assets/styles/mixins";
+
 $navBarHeight: 282px;
 
 .app__navigation-container {
   position: relative;
   padding: 0 0.5rem;
-  @media (max-width: 750px) {
+  @include mq-2 {
     display: none;
   }
 }
@@ -30,7 +32,7 @@ $navBarHeight: 282px;
 
 .app__navigation-menu {
   display: none;
-  @media (max-width: 950px) {
+  @include mq-2 {
     display: grid;
   }
 }

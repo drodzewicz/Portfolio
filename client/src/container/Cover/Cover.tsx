@@ -9,7 +9,7 @@ import "./Cover.scss";
 const Cover = () => {
   const displaySections = [section.WORK, section.EXPERIENCE, section.SKILLS];
   return (
-    <div className="app__flex cover-container">
+    <div className="cover-container">
       <div>
         <motion.div
           whileInView={{ x: [-100, 0], opacity: [0, 1] }}
