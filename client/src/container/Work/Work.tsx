@@ -1,7 +1,8 @@
-import { client, urlFor } from "client";
 import { section } from "constants/sections";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import { fetchProjects } from "service";
+import { urlFor } from "service/client";
 import { ProjectType } from "types";
 import AppWrap from "wrapper/AppWrap";
 import MotionWrap from "wrapper/MotionWrap/MotionWrap";
@@ -27,9 +28,7 @@ const Work = () => {
   };
 
   useEffect(() => {
-    const query = '*[_type == "project"]';
-
-    client.fetch(query).then((data: ProjectType[]) => {
+    fetchProjects().then((data) => {
       setProjects(transformData(data));
     });
   }, []);

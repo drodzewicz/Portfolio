@@ -1,5 +1,6 @@
 import { section } from "constants/sections";
 import React, { useEffect, useState } from "react";
+import { fetchEducation, fetchExperience } from "service";
 import { EducationType, ExperienceType } from "types";
 import AppWrap from "wrapper/AppWrap";
 import MotionWrap from "wrapper/MotionWrap/MotionWrap";
@@ -8,7 +9,6 @@ import PageWrap from "wrapper/PageWrap";
 import EducationCard from "components/EducationCard";
 import ExperienceCard from "components/ExperienceCard";
 
-import { client } from "../../client";
 import "./Experience.scss";
 
 const Experience = () => {
@@ -16,18 +16,16 @@ const Experience = () => {
   const [educations, setEducations] = useState<EducationType[]>([]);
 
   useEffect(() => {
-    const query = '*[_type == "experiences"]';
-
-    client.fetch(query).then((data: ExperienceType[]) => {
+    fetchExperience().then((data) => {
       const sortedExperience = data.sort((a, b) => {
-        return new Date(b.dateStarted).getTime() - new Date(a.dateStarted).getTime();
-      })
+        return (
+          new Date(b.dateStarted).getTime() - new Date(a.dateStarted).getTime()
+        );
+      });
       setExperiences(sortedExperience);
     });
 
-    const queryed = '*[_type == "education"]';
-
-    client.fetch(queryed).then((data) => {
+    fetchEducation().then((data) => {
       setEducations(data);
     });
   }, []);

@@ -1,5 +1,5 @@
 import { PortableText } from "@portabletext/react";
-import { urlFor } from "client";
+import { urlFor } from "service/client";
 import { format, formatDistance } from "date-fns";
 import React, { useState } from "react";
 import { RiAccountPinBoxLine } from "react-icons/ri";

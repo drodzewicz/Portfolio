@@ -8,16 +8,14 @@ import PageWrap from "wrapper/PageWrap";
 
 import SkillCard from "components/SkillCard/SkillCard";
 
-import { client } from "../../client";
+import { fetchSkills } from "service";
 import "./Skills.scss";
 
 const Skills = () => {
   const [skills, setSkills] = useState<SkillType[]>([]);
 
   useEffect(() => {
-    const skillsQuery = '*[_type == "skills"]';
-
-    client.fetch(skillsQuery).then((data) => {
+    fetchSkills().then((data) => {
       setSkills([...data]);
     });
   }, []);

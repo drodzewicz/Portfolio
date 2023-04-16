@@ -1,6 +1,6 @@
-import { client } from "client";
 import { images } from "constants/index";
 import React, { useState } from "react";
+import { sendMessage } from "service";
 
 import { FormMessage, IContactFormProps } from "./types";
 
@@ -14,13 +14,7 @@ const ContactForm: React.FC<IContactFormProps> = ({ setIsFormSubmitted }) => {
 
   const handleSubmit = () => {
     setIsLoading(true);
-
-    const contact = {
-      ...formData,
-      _type: "contact",
-    };
-
-    client.create(contact).then(() => {
+    sendMessage(formData).then(() => {
       setIsLoading(false);
       setIsFormSubmitted(true);
     });

@@ -1,4 +1,4 @@
-import { urlFor } from "client";
+import { urlFor } from "service/client";
 import { format } from "date-fns";
 import React from "react";
 
