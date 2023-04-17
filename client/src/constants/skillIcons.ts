@@ -21,6 +21,9 @@ import grails from "assets/technologies/grails.png";
 import mysql from "assets/technologies/mysql.png";
 import mongo from "assets/technologies/mongo.png";
 import fastapi from "assets/technologies/fatapi.png";
+import reactNative from "assets/technologies/react-native.png";
+import pandas from "assets/technologies/pandas.png";
+import sanity from "assets/technologies/sanity.png";
 
 
 const icons: Record<string, string> = {
@@ -46,6 +49,8 @@ const icons: Record<string, string> = {
   MYSQL_ICON: mysql,
   MONGODB_ICON: mongo,
   FAST_API_ICON: fastapi,
+  REACT_NATIVE_ICON: reactNative,
+  SANITY_ICON: sanity,
 };
 
 export default icons;

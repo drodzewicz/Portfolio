@@ -11,7 +11,7 @@
   flex-direction: column;
 
   @include mq-2 {
-    width: 100%;
+    width: 80vw;
   }
 
   &__footer {
@@ -30,15 +30,14 @@
 
   &__header {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    margin-bottom: 1rem;
+    justify-content: center;
+    gap: 1rem;
 
     &__logo {
       width: 4rem;
       height: 4rem;
       object-fit: contain;
-      margin-right: 1rem;
     }
 
     &__location {
@@ -46,10 +45,11 @@
     }
 
     &__main {
-      flex-grow: 1;
+      flex: 2;
+      overflow: hidden;
     }
 
-    &__name {
+    &__name, &__location  {
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -57,13 +57,18 @@
 
     &__time {
       color: var(--gray-color);
-      margin-left: auto;
       cursor: default;
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      line-height: 0.8rem;
+      flex: 1;
+      gap: 0.2rem;
+      line-height: 0.5rem;
+      
+      @include mq-2 {
+        font-size: 0.8rem;
+        align-items: center;
+        flex-direction: column;
+      }
     }
   }
 

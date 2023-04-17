@@ -9,7 +9,7 @@ const NavigationDots: React.FC<INavigationDotsProps> = ({ active }) => {
   return (
     <div className="app__navigation-container">
       <div className="app__navigation">
-        {Object.entries(sectionConfig).map(([name, { icon, name: label }], index) => (
+        {Object.entries(sectionConfig).map(([name, { icon, label }], index) => (
           <NavigationDot
             key={`link-${name}`}
             index={index}

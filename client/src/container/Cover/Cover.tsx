@@ -24,7 +24,7 @@ const Cover = () => {
           <div className="app_flex cover-link-container">
             {displaySections.map((sectionName) => {
               const SectionIcon = sectionConfig[sectionName]?.icon;
-              const sectionLabel = sectionConfig[sectionName]?.name;
+              const sectionLabel = sectionConfig[sectionName]?.label;
               return (
                 <motion.a
                   key={`cover-nav-${sectionName}`}

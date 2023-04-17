@@ -1,9 +1,9 @@
 import { PortableText } from "@portabletext/react";
-import { urlFor } from "service/client";
 import { format, formatDistance } from "date-fns";
 import React, { useState } from "react";
 import { RiAccountPinBoxLine } from "react-icons/ri";
 import ReactTooltip from "react-tooltip";
+import { urlFor } from "service/client";
 
 import TechStack from "components/TechStack/TechStack";
 
@@ -34,8 +34,13 @@ const ExperienceCard: React.FC<IExperienceCardProps> = ({
           className="experience__header__logo"
         />
         <div className="experience__header__main">
-          <h3 className="experience__header__name">{companyName}</h3>
-          <p className="experience__header__location">{`${country}, ${city}`}</p>
+          <h3 className="experience__header__name" title={companyName}>
+            {companyName}
+          </h3>
+          <p
+            className="experience__header__location"
+            title={`${country}, ${city}`}
+          >{`${country}, ${city}`}</p>
         </div>
         <p
           data-tip
@@ -53,7 +58,7 @@ const ExperienceCard: React.FC<IExperienceCardProps> = ({
         <ReactTooltip id={`${companyName}-time-tooltip`} effect="solid">
           {formatDistance(
             dateFinished ? new Date(dateFinished) : Date.now(),
-            new Date(dateStarted),
+            new Date(dateStarted)
           )}
         </ReactTooltip>
       </div>

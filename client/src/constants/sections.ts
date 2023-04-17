@@ -11,16 +11,16 @@ enum section {
 }
 
 interface ISectionConfig {
-  name: string;
+  label: string;
   icon: IconType;
 }
 
-const sectionConfig: Record<string, ISectionConfig> = {
-  [section.COVER]: { icon: RiHomeSmileLine, name: "Home" },
-  [section.EXPERIENCE]: { icon: RiTimeLine, name: "Experience" },
-  [section.WORK]: { icon: RiRocket2Fill, name: "Projects" },
-  [section.SKILLS]: { icon: RiLightbulbFlashLine, name: "Skills" },
-  [section.CONTACT]: { icon: RiMailLine, name: "Contact" },
+const sectionConfig: Record<section, ISectionConfig> = {
+  [section.COVER]: { icon: RiHomeSmileLine, label: "Home" },
+  [section.EXPERIENCE]: { icon: RiTimeLine, label: "Experience" },
+  [section.WORK]: { icon: RiRocket2Fill, label: "Projects" },
+  [section.SKILLS]: { icon: RiLightbulbFlashLine, label: "Skills" },
+  [section.CONTACT]: { icon: RiMailLine, label: "Contact" },
 };
 
 export default sectionConfig;

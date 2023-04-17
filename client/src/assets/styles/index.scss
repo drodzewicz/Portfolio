@@ -24,6 +24,10 @@
   }
 }
 
+body {
+  background-color: var(--primary-color);
+}
+
 h1.head-text {
   font-size: 9vh;
   @include mq-3 {
