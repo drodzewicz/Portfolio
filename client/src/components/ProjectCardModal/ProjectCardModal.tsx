@@ -46,8 +46,11 @@ const ProjectCardModal: React.FC<IProjectCardProps> = ({
             swipeable
             autoPlay
             emulateTouch
+            infiniteLoop
             showThumbs={false}
             showStatus={false}
+            interval={10000}
+            swipeScrollTolerance={120}
           />
         </motion.div>
         <motion.div
