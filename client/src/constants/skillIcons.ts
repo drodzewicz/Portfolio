@@ -51,6 +51,7 @@ const icons: Record<string, string> = {
   FAST_API_ICON: fastapi,
   REACT_NATIVE_ICON: reactNative,
   SANITY_ICON: sanity,
+  PANDAS_ICON: pandas,
 };
 
 export default icons;

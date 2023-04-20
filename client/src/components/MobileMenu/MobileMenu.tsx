@@ -1,5 +1,4 @@
 import sectionConfig, { section } from "constants/sections";
-import { AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import { RiCloseLine, RiMenuLine } from "react-icons/ri";
 
