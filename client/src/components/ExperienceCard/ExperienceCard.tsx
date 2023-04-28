@@ -5,7 +5,7 @@ import { RiAccountPinBoxLine } from "react-icons/ri";
 import ReactTooltip from "react-tooltip";
 import { urlFor } from "service/client";
 
-import TechStack from "components/TechStack/TechStack";
+import TechStack from "components/TechStack";
 
 import "./ExperienceCard.scss";
 import { IExperienceCardProps } from "./types";

@@ -6,24 +6,24 @@
     {
         "label": "Run App",
         "dependsOn": [
-            "Server",
-            "Client"
+            "Studio",
+            "Web"
         ],
         "problemMatcher": []
     },
     {
-        "label": "Server",
+        "label": "Studio",
         "type": "shell",
-        "command": "cd server && sanity start",
+        "command": "cd studio && npm run dev",
         "presentation": {
             "group": "portfolio"
         },
         "problemMatcher": []
     },
     {
-        "label": "Client",
+        "label": "Web",
         "type": "shell",
-        "command": "cd client && npm start",
+        "command": "cd client && npm run start",
         "presentation": {
             "group": "portfolio"
         },

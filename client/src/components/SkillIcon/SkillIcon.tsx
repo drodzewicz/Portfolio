@@ -5,8 +5,8 @@ import ReactTooltip from "react-tooltip";
 import { ISkillIconProps } from "./types";
 
 const SkillIcon: React.FC<ISkillIconProps> = ({
-  icon,
-  skill,
+  logo,
+  name,
   showTooltip,
   ...otherProps
 }) => {
@@ -15,13 +15,13 @@ const SkillIcon: React.FC<ISkillIconProps> = ({
       <img
         {...otherProps}
         data-tip
-        data-for={`${skill}-tooltip`}
-        src={SKILL_ICON[`${icon}_ICON`] || SKILL_ICON["BROKEN_IMAGE_ICON"]}
-        alt={skill}
+        data-for={`${name}-tooltip`}
+        src={logo || SKILL_ICON["BROKEN_IMAGE_ICON"]}
+        alt={name}
       />
       {showTooltip && (
-        <ReactTooltip id={`${skill}-tooltip`} effect="solid">
-          {skill}
+        <ReactTooltip id={`${name}-tooltip`} effect="solid">
+          {name}
         </ReactTooltip>
       )}
     </>

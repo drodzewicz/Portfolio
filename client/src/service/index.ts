@@ -5,11 +5,30 @@ import { EducationType, ExperienceType, ProjectType, SkillType } from "types";
 import { client } from "./client";
 
 export const fetchProjects = async (): Promise<ProjectType[]> => {
-  return client.fetch(`*[_type == "${Schema.PROJECT}"]`);
+  return client.fetch(`*[_type == "${Schema.PROJECT}"]{
+    _id,
+    title,
+    description,
+    demoURL,
+    sourceCodeURL,
+    techStack[]-> { name,  logo },
+    images,
+  }`);
 };
 
 export const fetchExperience = async (): Promise<ExperienceType[]> => {
-  return client.fetch(`*[_type == "${Schema.EXPERIENCE}"]`);
+  return client.fetch(`*[_type == "${Schema.EXPERIENCE}"]{
+    _id,
+    companyName,
+    country,
+    city,
+    dateStarted,
+    dateFinished,
+    position,
+    description,
+    companyLogo,
+    techStack[]-> { logo, name },
+  }`);
 };
 
 export const fetchEducation = async (): Promise<EducationType[]> => {

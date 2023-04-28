@@ -10,8 +10,8 @@ export type EducationType = {
 };
 
 export interface SkillType {
-  skill: string;
-  icon: string;
+  name: string;
+  logo: string;
 }
 
 export interface ExperienceType {

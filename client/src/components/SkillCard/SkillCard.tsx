@@ -1,4 +1,3 @@
-import SKILL_ICON from "constants/skillIcons";
 import React from "react";
 import { usePalette } from "react-palette";
 
@@ -8,8 +7,7 @@ import "./SkillCard.scss";
 import { ISkillCardProps } from "./types";
 
 const SkillCard: React.FC<ISkillCardProps> = (props) => {
-  const image = SKILL_ICON[`${props.icon}_ICON`];
-  const { data } = usePalette(image);
+  const { data } = usePalette(props.logo);
   return (
     <div
       className="skill-card"
@@ -18,7 +16,7 @@ const SkillCard: React.FC<ISkillCardProps> = (props) => {
       <div className="skill-card__container">
         <SkillIcon className="skill-card__icon" {...props} />
       </div>
-      <p className="skill-card__title">{props.skill}</p>
+      <p className="skill-card__title">{props.name}</p>
     </div>
   );
 };
