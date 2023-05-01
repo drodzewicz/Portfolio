@@ -1,0 +1,136 @@
+@import "./colors";
+@import "./mixins";
+
+:root {
+  --font-base: "DM Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.head-text {
+  font-weight: 800;
+  text-align: center;
+  color: var(--black-color);
+  text-transform: capitalize;
+
+  strong {
+    color: var(--secondary-color);
+  }
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: var(--font-base);
+}
+
+h1.head-text {
+  font-size: 9vh;
+  @include mq-3 {
+    font-size: 8vh;
+  }
+  @include mq-2 {
+    font-size: 3rem;
+  }
+}
+h2.head-text {
+  font-size: 7vh;
+  @include mq-3 {
+    font-size: 6vh;
+  }
+  @include mq-2 {
+    font-size: 2rem;
+  }
+}
+
+h3.head-text {
+  font-size: 4vh;
+  @include mq-3 {
+    font-size: 3vh;
+  }
+  @include mq-2 {
+    font-size: 1.5rem;
+  }
+}
+
+.p-text {
+  font-size: 0.8rem;
+  text-align: left;
+  color: var(--gray-color);
+  line-height: 1.5;
+}
+
+//  -----------
+body {
+  // overflow: hidden;
+  &::-webkit-scrollbar {
+    width: 0.4em;
+    height: 0.4em;
+  }
+  &::-webkit-scrollbar-track {
+    background: #7bbcc861;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #7bbcc8;
+    border-radius: 2rem;
+  }
+}
+
+.app {
+  position: relative;
+  background-image: url("../images/cogs-background.png");
+  background-size: 50%;
+  background-position: center;
+  background-repeat: repeat;
+  // overflow-y: scroll;
+  // overflow-x: hidden;
+  // height: 100vh;
+
+  // scroll-snap-type: y proximity;
+  // & > .app__container {
+  // scroll-snap-align: start;
+  // }
+  & > .app__container:nth-child(2n) {
+    background-color: var(--light-blue-tone-2);
+  }
+}
+
+.app {
+  &::-webkit-scrollbar {
+    width: 0.7em;
+    height: 0.7em;
+  }
+  &::-webkit-scrollbar-track {
+    background: #7bbcc861;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #7bbcc8;
+    border-radius: 2rem;
+  }
+}
+
+.app__container {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.page-not-found__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  background-image: url("../images/cogs-background.png");
+  background-size: 50%;
+  background-position: center;
+}

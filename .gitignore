@@ -23,6 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 */.env
+*/.env.development
+*/.env.production
 
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
@@ -53,3 +55,8 @@ yarn-error.log*
 
 # Dotenv and similar local-only files
 *.local
+
+# GATSBY
+*/.cache/
+*/public
+*/src/gatsby-types.d.ts

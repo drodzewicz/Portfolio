@@ -1,0 +1,47 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "portfolio",
+  "author": "Darek",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@portabletext/react": "^3.0.0",
+    "date-fns": "^2.29.3",
+    "framer-motion": "^10.12.4",
+    "gatsby": "^5.9.0",
+    "gatsby-omni-font-loader": "^2.0.2",
+    "gatsby-plugin-image": "^3.9.0",
+    "gatsby-plugin-manifest": "^5.9.0",
+    "gatsby-plugin-sanity-image": "^0.13.4",
+    "gatsby-plugin-sass": "^6.9.0",
+    "gatsby-plugin-sharp": "^5.9.0",
+    "gatsby-source-sanity": "^7.6.3",
+    "gatsby-transformer-sharp": "^5.9.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.8.0",
+    "react-responsive-carousel": "^3.2.23",
+    "react-tooltip": "^5.11.1",
+    "sass": "^1.62.1"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "@types/node": "^18.15.13",
+    "@types/react": "^18.0.38",
+    "@types/react-dom": "^18.0.11",
+    "gatsby-plugin-root-import": "^2.0.9",
+    "typescript": "^5.0.4"
+  }
+}

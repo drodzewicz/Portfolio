@@ -23,7 +23,7 @@
     {
         "label": "Web",
         "type": "shell",
-        "command": "cd client && npm run start",
+        "command": "cd web && npm run start",
         "presentation": {
             "group": "portfolio"
         },
